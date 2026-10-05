@@ -1,12 +1,18 @@
 const express = require("express")
 const path = require("path")
-const mysql = require("mysql2")
-const bodyParser = require("body-parser")
+const hbs = require("express-handlebars")
 
 const app = express()
+app.engine(hbs.engine({ extname: "hbs", defaultLayout: "main", layoutsDir: __dirname + "/views/layouts" })) 
+app.set("view engine", "handlebars")
+app.set("views", path.join(__dirname, "views"))
+
+const mysql = require("mysql")
+
+const bodyParser = require("body-parser")
 app.use(bodyParser.urlencoded({ extended: true }))
- 
-const con = mysql.createConnection({
+
+var con = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "qwerty",

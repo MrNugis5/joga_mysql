@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "express": "^5.2.1",
+    "express-handlebars": "^9.0.1",
+    "mysql2": "^3.24.5"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4"
+  }
+}
